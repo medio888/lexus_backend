@@ -1,5 +1,5 @@
 from django.db import models
-from solo.models import SingletonModel
+
 
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
@@ -38,20 +38,5 @@ class Products(models.Model):
 
 
 
-class Footer(SingletonModel):
-    id = models.AutoField(primary_key=True)
-    departement = models.CharField(verbose_name='Departement', max_length=255, null=True, blank=True)
-    
-    def __str__(self):
-        return self.departement
-    
-    
-class Division(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(verbose_name='Division', max_length=255, null=True, blank=True)
-    footer = models.ForeignKey(Footer, on_delete=models.CASCADE, related_name='divisions', null=True)
-    
-    def __str__(self):
-        return self.name    
 
 
