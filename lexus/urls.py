@@ -30,7 +30,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('api.urls')),
     path('user/', include('user.urls')),
+    path('testdrive/', include("test_drive.urls")),
 ]
+
+
 
 
 
