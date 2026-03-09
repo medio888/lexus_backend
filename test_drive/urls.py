@@ -1,7 +1,5 @@
-from django.urls import path
-from .views import TestDriveListCreateView, TestDriveDetailView
+from rest_framework.routers import DefaultRouter
+from .views import TestDriveViewSet
 
-urlpatterns = [
-    path("", TestDriveListCreateView.as_view()),
-    path("<int:pk>/", TestDriveDetailView.as_view()),
-]
+router = DefaultRouter()
+router.register('testdrive', TestDriveViewSet)

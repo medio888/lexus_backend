@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from api.urls import router as api_router
+from user.urls import router as user_router
+from test_drive.urls import router as test_drive_router
 from api.views import CategoryViewSet
 
 
@@ -25,12 +27,12 @@ main_router = routers.DefaultRouter()
 
 
 main_router.registry.extend(api_router.registry)
+main_router.registry.extend(user_router.registry)
+main_router.registry.extend(test_drive_router.registry)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('api.urls')),
-    path('user/', include('user.urls')),
-    path('testdrive/', include("test_drive.urls")),
+    path('', include(main_router.urls)),
 ]
 
 

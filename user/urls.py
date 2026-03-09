@@ -1,6 +1,6 @@
-from django.urls import path
-from .views import RegisterView
+from rest_framework.routers import DefaultRouter
+from .views import RegisterViewSet
 
-urlpatterns = [
-    path('', RegisterView.as_view(), name='register'),
-]
+
+router = DefaultRouter()
+router.register('register', RegisterViewSet)
