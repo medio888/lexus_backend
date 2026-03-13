@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api',
     'user',
     'test_drive',
+    'dealer',
     'drf_spectacular',
 ]
 
@@ -142,3 +143,14 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
+
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'asanbekovmeder88@gmail.com'       
+EMAIL_HOST_PASSWORD = 'xfey torr qvka agha'   
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

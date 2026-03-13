@@ -19,10 +19,13 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
+    id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=30, unique=True)
-    phone = models.CharField(max_length=20, unique=True)
+    phone = models.CharField(max_length=9, unique=True)
+    email = models.EmailField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+
 
     objects = CustomUserManager()
 
