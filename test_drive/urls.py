@@ -1,5 +1,5 @@
-from rest_framework.routers import DefaultRouter
+from rest_framework import routers
 from .views import TestDriveViewSet
 
-router = DefaultRouter()
-router.register('testdrive', TestDriveViewSet)
+router = routers.DefaultRouter()
+router.register('test_drives', TestDriveViewSet)

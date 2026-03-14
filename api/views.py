@@ -27,8 +27,8 @@ class SubCategoryViewSet(
 ):
     queryset = SubCategory.objects.all()
     serializer_class = SubCategorySerializer
-    
-      
 
 
-
+class ProductsViewSet(viewsets.ModelViewSet):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer

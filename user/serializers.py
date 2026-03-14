@@ -7,11 +7,14 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'phone', 'password', 'password2']
+        fields = ['username', 'phone', 'email', 'password', 'password2']
 
     def validate(self, data):
         if data['password'] != data['password2']:
             raise serializers.ValidationError("Пароли не совпадают")
+        phone = data.get('phone', '')
+        if not phone.startswith('+996'):
+            data['phone'] = '+996' + phone.lstrip('0')
         return data
 
     def create(self, validated_data):

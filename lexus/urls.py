@@ -22,6 +22,7 @@ from rest_framework import routers
 from api.urls import router as api_router
 from user.urls import router as user_router
 from test_drive.urls import router as test_drive_router
+from dealer.urls import router as dealer_router
 
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
@@ -31,6 +32,7 @@ main_router = routers.DefaultRouter()
 main_router.registry.extend(api_router.registry)
 main_router.registry.extend(user_router.registry)
 main_router.registry.extend(test_drive_router.registry)
+main_router.registry.extend(dealer_router.registry)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
