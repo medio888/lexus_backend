@@ -12,7 +12,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - "54333:5432"
+      - "5436:5432"
 
   backend:
     build: .
@@ -26,7 +26,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "80033:8000"
+      - "8006:8000"
     depends_on:
       - db
     environment:
@@ -34,7 +34,7 @@ services:
       DB_USER: django_user
       DB_PASSWORD: django_pass
       DB_HOST: db
-      DB_PORT: 54333
+      DB_PORT: 5436
 
 volumes:
   postgres_data:
