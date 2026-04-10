@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'lexus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_db_name',
-        'USER': 'your_db_user',
-        'PASSWORD': 'your_db_password',
-        'HOST': 'db',
-        'PORT': '5432',
+        'NAME': 'django_db_name',
+        'USER': 'django_db_user',
+        'PASSWORD': 'django_db_password',
+        'HOST': 'django_db',
+        'PORT': '5436',
     }
 }
 
